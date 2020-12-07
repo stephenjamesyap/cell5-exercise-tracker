@@ -26,7 +26,7 @@ const Wiki: React.FC<RouteComponentProps<IDescription>> = (props) => {
                 <div className="col-sm-8"></div>
             </div>
             <div className="row">
-                <div className="col-sm-4"><h1 className="text-center">{description}</h1></div>
+                <div className="col-sm-4"><h1 className="text-center">{title}</h1></div>
                 <div className="col-sm-8"><p>{body}</p></div>
             </div>
         </div>

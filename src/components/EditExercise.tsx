@@ -9,7 +9,8 @@ const EditExercise: React.FC<RouteComponentProps<IParams>> = (props) => {
     const [lastname, setLastName] = useState('');
     const [description, setDescription] = useState('');
     const [duration, setDuration] = useState(0);
-    const { id } = props.match.params;
+    const { id } = props.match.params
+    console.log('edit exercise',props);
     const location:any = '/list';
 
     useEffect(() => {

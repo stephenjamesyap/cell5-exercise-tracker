@@ -4,6 +4,6 @@ import Adapter from 'enzyme-adapter-react-16';
 configure({ adapter: new Adapter() });
 
 
-it('Render CreateExercise component', () => {
+test('Render CreateExercise component', () => {
     shallow(<CreateExercise />);
 });

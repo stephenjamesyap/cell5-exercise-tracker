@@ -45,7 +45,7 @@ const ExercisesList: React.FC = () => {
         )
     }
 
-    columns = [
+     columns = [
         {
             Header: 'Firstname',
             accessor: (accessor) => accessor.firstname,

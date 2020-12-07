@@ -4,6 +4,6 @@ import ExercisesList from '../components/ExercisesList';
 configure({ adapter: new Adapter() });
 
 
-it('Render CreateExercise component', () => {
+test('Render ExercisesList component', () => {
     shallow(<ExercisesList />);
 });
