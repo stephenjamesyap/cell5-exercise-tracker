@@ -1,9 +1,9 @@
 import React from 'react';
-import * as ReactDOM from 'react-dom';
-import CreateExercise from './components/CreateExercise';
+import { shallow, configure } from 'enzyme';
+import App from './App';
+import Adapter from 'enzyme-adapter-react-16';
+configure({ adapter: new Adapter() });
 
-test('CreateExercise render', () => {
-  const root = document.createElement("div");
-  ReactDOM.render(<CreateExercise />, root)
-  expect(root.querySelector("label")?.textContent).toBe("First Name");
+test('Renders react App', () => {
+  shallow(<App />);
 });

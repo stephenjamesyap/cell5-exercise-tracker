@@ -11,7 +11,6 @@ const ExercisesList: React.FC = () => {
     const [exercises, setExercises] = useState([]);
     let columns: Column<IExercise>[] & UseFiltersColumnOptions<IExercise>[];
     let data: IExercise[];
-    let url: string;
     const history = useHistory();
 
     useEffect(() => {
@@ -30,7 +29,6 @@ const ExercisesList: React.FC = () => {
         const handleEdit = (event: React.MouseEvent<HTMLButtonElement>) => {
             history.push('/edit/'+props.accessor._id);
         }
-
         return (
             <button className="btn btn-primary m-1" onClick={handleEdit}>Edit</button>
         )
@@ -42,7 +40,6 @@ const ExercisesList: React.FC = () => {
             .then(res => console.log(res.data));
             setExercises(exercises.filter((exercise: IExercise) => exercise._id !== props.accessor._id));        
         }
-
         return (
             <button className="btn btn-primary m-1" onClick={handleDelete}>Delete</button>
         )
@@ -81,8 +78,9 @@ const ExercisesList: React.FC = () => {
             disableFilters: true 
         },
     ]
-
+    
     data = exercises;
+
     return (
         <div className="container">
             <div className="row">
