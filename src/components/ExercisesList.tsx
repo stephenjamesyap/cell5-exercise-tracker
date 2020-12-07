@@ -25,17 +25,15 @@ const ExercisesList: React.FC = () => {
             }
         }, []);
 
-    const EditButton: React.FC<{accessor: IExercise}> = (props) => {
-        const handleEdit = (event: React.MouseEvent<HTMLButtonElement>) => {
-            history.push('/edit/'+props.accessor._id);
-        }
+    const EditButton: React.FC<{accessor: IExercise}> = (props) => {        
         return (
-            <button className="btn btn-primary m-1" onClick={handleEdit}>Edit</button>
+            <Link className="btn btn-primary m-1" to={'edit/'+props.accessor._id}>Edit</Link>
         )
     }
 
     const DeleteButton: React.FC<{accessor: IExercise}> = (props) => {
         const handleDelete = (event: React.MouseEvent<HTMLButtonElement>) => {
+            event.preventDefault();
             axios.delete('http://localhost:5000/exercises/delete/'+props.accessor._id)
             .then(res => console.log(res.data));
             setExercises(exercises.filter((exercise: IExercise) => exercise._id !== props.accessor._id));        
